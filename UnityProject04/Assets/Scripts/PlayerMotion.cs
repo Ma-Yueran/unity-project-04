@@ -6,16 +6,14 @@ namespace MYR
 {
     public class PlayerMotion : MonoBehaviour
     {
-        public float speed = 10;
+        public float speed = 3;
 
         private Transform myTransform;
-        private new Rigidbody rigidbody;
         private PlayerControls playerControls;
 
         private void Awake()
         {
             myTransform = transform;
-            rigidbody = GetComponent<Rigidbody>();
             playerControls = GetComponent<PlayerControls>();
         }
 
@@ -29,7 +27,6 @@ namespace MYR
         {
             if (!playerControls.isMoving)
             {
-                rigidbody.velocity = Vector3.Lerp(rigidbody.velocity, Vector3.zero, 0.1f);
                 return;
             }
 
