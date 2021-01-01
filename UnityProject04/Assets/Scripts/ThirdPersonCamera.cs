@@ -10,7 +10,7 @@ namespace MYR
         public Transform cameraPivot;
         public Transform cameraTransform;
 
-        public float distanceToCamera = 2;
+        public float distanceToCamera = 3;
         public float sensitivityX = 2;
         public float sensitivityY = 2;
 
