@@ -6,6 +6,8 @@ namespace MYR
 {
     public class DamageCollider : MonoBehaviour
     {
+        public int damage = 30;
+
         private new Collider collider;
 
         private void Awake()
@@ -28,8 +30,12 @@ namespace MYR
         {
             if (other.tag.Equals("Enemy"))
             {
-                // todo
-                print("hit");
+                Stats stats = other.GetComponent<Stats>();
+
+                if (stats != null)
+                {
+                    stats.TakeDamage(damage);
+                }
             }
         }
     }

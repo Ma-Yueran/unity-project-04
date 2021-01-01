@@ -23,7 +23,6 @@ namespace MYR {
 
             if (playerControls.isAttacking)
             {
-                // todo
                 animatorHandler.PlayAnimation("Light_Attack_01", true);
             }
         }
