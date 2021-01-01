@@ -26,6 +26,11 @@ namespace MYR
 
         public void HandleMovement()
         {
+            if (animatorHandler.animator.GetBool("IsInteracting"))
+            {
+                return;
+            }
+
             if (!playerControls.isMoving)
             {
                 // Set animation state
