@@ -1,0 +1,36 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace MYR
+{
+    public class DamageCollider : MonoBehaviour
+    {
+        private new Collider collider;
+
+        private void Awake()
+        {
+            collider = GetComponent<Collider>();
+            DisableCollider();
+        }
+
+        public void EnableCollider()
+        {
+            collider.enabled = true;
+        }
+
+        public void DisableCollider()
+        {
+            collider.enabled = false;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag.Equals("Enemy"))
+            {
+                // todo
+                print("hit");
+            }
+        }
+    }
+}

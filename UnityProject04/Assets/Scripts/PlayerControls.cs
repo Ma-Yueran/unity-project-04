@@ -15,6 +15,7 @@ namespace MYR
         public float inputV;
         public bool isMoving;
         public bool isRunning;
+        public bool isAttacking;
 
         [Header("Flags")]
         public bool dodgeFlag;
@@ -37,6 +38,8 @@ namespace MYR
             inputH = Input.GetAxis("Horizontal");
             inputV = Input.GetAxis("Vertical");
             isMoving = inputH != 0 || inputV != 0;
+
+            isAttacking = Input.GetMouseButton(0);
 
             HandleDodgeAndRunInput();
         }

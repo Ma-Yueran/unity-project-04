@@ -10,8 +10,8 @@ namespace MYR
     /// </summary>
     public class PlayerMotion : MonoBehaviour
     {
-        public float walkSpeed = 3;
-        public float runSpeed = 6;
+        public float walkSpeed = 2.5f;
+        public float runSpeed = 4f;
 
         private Transform myTransform;
         private PlayerControls playerControls;
@@ -26,7 +26,7 @@ namespace MYR
 
         public void HandleMovement()
         {
-            if (animatorHandler.animator.GetBool("IsInteracting"))
+            if (animatorHandler.GetIsInteracting())
             {
                 return;
             }

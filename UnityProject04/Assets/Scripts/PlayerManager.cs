@@ -8,17 +8,20 @@ namespace MYR
     {
         private PlayerControls playerControls;
         private PlayerMotion playerMotion;
+        private PlayerAttacker playerAttacker;
 
         private void Awake()
         {
             playerControls = GetComponent<PlayerControls>();
             playerMotion = GetComponent<PlayerMotion>();
+            playerAttacker = GetComponent<PlayerAttacker>();
         }
 
         private void Update()
         {
             playerControls.HandlePlayerInputs();
             playerMotion.HandleMovement();
+            playerAttacker.HandleAttack();
         }
 
         private void LateUpdate()

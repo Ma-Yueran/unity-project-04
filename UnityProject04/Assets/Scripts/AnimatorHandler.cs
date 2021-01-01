@@ -15,7 +15,7 @@ namespace MYR
 
         public int currentAnimationState = 0;
 
-        public Animator animator;
+        private Animator animator;
         private new Rigidbody rigidbody;
 
         private void Awake()
@@ -35,6 +35,11 @@ namespace MYR
             animator.SetBool("IsInteracting", isInteracting);
             animator.applyRootMotion = isInteracting;
             animator.CrossFade(animationName, 0.2f);
+        }
+
+        public bool GetIsInteracting()
+        {
+            return animator.GetBool("IsInteracting");
         }
 
         private void OnAnimatorMove()
