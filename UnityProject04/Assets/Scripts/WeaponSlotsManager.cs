@@ -8,6 +8,13 @@ namespace MYR
     {
         public DamageCollider weaponDamageCollider;
 
+        private Animator animator;
+
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
+        }
+
         public void EnableWeaponDamageCollider()
         {
             weaponDamageCollider.EnableCollider();
@@ -16,6 +23,16 @@ namespace MYR
         public void DisableWeaponDamageCollider()
         {
             weaponDamageCollider.DisableCollider();
+        }
+
+        public void EnableAttackCombo()
+        {
+            animator.SetBool("CanCombo", true);
+        }
+
+        public void DisableAttackCombo()
+        {
+            animator.SetBool("CanCombo", false);
         }
     }
 }

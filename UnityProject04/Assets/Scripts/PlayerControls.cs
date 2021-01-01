@@ -15,13 +15,21 @@ namespace MYR
         public float inputV;
         public bool isMoving;
         public bool isRunning;
-        public bool isAttacking;
 
         [Header("Flags")]
         public bool dodgeFlag;
+        public bool attackFlag;
+        public bool comboFlag;
 
         private float keyDownTime;
         private float keyReactionTime = 0.3f;
+
+        private Animator animator;
+
+        private void Awake()
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
 
         public Vector3 GetTargetDirection()
         {
@@ -39,14 +47,15 @@ namespace MYR
             inputV = Input.GetAxis("Vertical");
             isMoving = inputH != 0 || inputV != 0;
 
-            isAttacking = Input.GetMouseButton(0);
-
             HandleDodgeAndRunInput();
+            HandleAttackAndComboInput();
         }
 
         public void ResetFlags()
         {
             dodgeFlag = false;
+            attackFlag = false;
+            comboFlag = false;
         }
 
         private void HandleDodgeAndRunInput()
@@ -65,6 +74,21 @@ namespace MYR
             }
 
             isRunning = Input.GetKey(KeyCode.LeftShift);
+        }
+
+        private void HandleAttackAndComboInput()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (animator.GetBool("CanCombo") && !animator.GetBool("DoCombo"))
+                {
+                    comboFlag = true;
+                }
+                else
+                {
+                    attackFlag = true;
+                }
+            }
         }
     }
 }

@@ -30,6 +30,11 @@ namespace MYR
             currentAnimationState = state;
         }
 
+        public void SetBool(string boolName, bool value)
+        {
+            animator.SetBool(boolName, value);
+        }
+
         public void PlayAnimation(string animationName, bool isInteracting)
         {
             animator.SetBool("IsInteracting", isInteracting);

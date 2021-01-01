@@ -16,12 +16,17 @@ namespace MYR {
 
         public void HandleAttack()
         {
+            if (playerControls.comboFlag)
+            {
+                animatorHandler.SetBool("DoCombo", true);
+            }
+
             if (animatorHandler.GetIsInteracting())
             {
                 return;
             }
 
-            if (playerControls.isAttacking)
+            if (playerControls.attackFlag)
             {
                 animatorHandler.PlayAnimation("Light_Attack_01", true);
             }
