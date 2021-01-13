@@ -35,15 +35,8 @@ namespace MYR
                 if (stats != null)
                 {
                     stats.TakeDamage(damage);
+                    DisableCollider();
                 }
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.tag.Equals("Enemy"))
-            {
-                DisableCollider();
             }
         }
     }

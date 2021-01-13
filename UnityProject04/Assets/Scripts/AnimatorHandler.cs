@@ -15,6 +15,8 @@ namespace MYR
 
         public int currentAnimationState = 0;
 
+        public FrontGroundCheck frontGroundCheck;
+
         private Animator animator;
         private new Rigidbody rigidbody;
 
@@ -72,9 +74,19 @@ namespace MYR
             animator.SetBool("CanRotate", false);
         }
 
+        public void SetIsFalling(bool isFalling)
+        {
+            animator.SetBool("IsFalling", isFalling);
+        }
+
+        public bool GetIsFalling()
+        {
+            return animator.GetBool("IsFalling");
+        }
+
         private void OnAnimatorMove()
         {
-            if (!animator.GetBool("IsInteracting"))
+            if (!animator.GetBool("IsInteracting") || frontGroundCheck.isFrontEmpty)
             {
                 return;
             }

@@ -12,16 +12,19 @@ namespace MYR
     {
         public float walkSpeed = 2.5f;
         public float runSpeed = 4f;
+        public float fallingForwardSpeed = 1.5f;
 
         private Transform myTransform;
         private PlayerControls playerControls;
         private AnimatorHandler animatorHandler;
+        private GroundCheck groundCheck;
 
         private void Awake()
         {
             myTransform = transform;
             playerControls = GetComponent<PlayerControls>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            groundCheck = GetComponentInChildren<GroundCheck>();
         }
 
         public void HandleMovement()
@@ -31,7 +34,7 @@ namespace MYR
                 HandleRotation();
             }
 
-            if (animatorHandler.GetIsInteracting())
+            if (animatorHandler.GetIsInteracting() || animatorHandler.GetIsFalling())
             {
                 return;
             }
@@ -70,6 +73,21 @@ namespace MYR
 
             Quaternion targetDirection = Quaternion.LookRotation(playerControls.GetTargetDirection());
             myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetDirection, 0.05f);
+        }
+
+        public void HandleFalling()
+        {
+            if (groundCheck.IsGoingToFall())
+            {
+                animatorHandler.SetIsFalling(true);
+                transform.position += transform.forward * fallingForwardSpeed * Time.deltaTime;
+                
+            }
+
+            if (groundCheck.IsLanding())
+            {
+                animatorHandler.SetIsFalling(false);
+            }
         }
     }
 }

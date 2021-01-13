@@ -21,6 +21,7 @@ namespace MYR
         {
             playerControls.HandlePlayerInputs();
             playerMotion.HandleMovement();
+            playerMotion.HandleFalling();
             playerAttacker.HandleAttack();
         }
 

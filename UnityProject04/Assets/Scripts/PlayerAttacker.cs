@@ -21,7 +21,7 @@ namespace MYR {
                 animatorHandler.SetBool("DoCombo", true);
             }
 
-            if (animatorHandler.GetIsInteracting())
+            if (animatorHandler.GetIsInteracting() || animatorHandler.GetIsFalling())
             {
                 return;
             }
