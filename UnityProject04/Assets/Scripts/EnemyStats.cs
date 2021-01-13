@@ -26,9 +26,14 @@ namespace MYR
                 currentHealth = 0;
                 animatorHandler.PlayAnimation("Death", true);
             }
+            else if (!animatorHandler.GetIsBeingHit())
+            {
+                animatorHandler.SetIsBeingHit(true);
+                animatorHandler.PlayAnimation("Hit01", true);
+            }
             else
             {
-                animatorHandler.PlayAnimation("Hit", true);
+                animatorHandler.PlayAnimation("Hit02", true);
             }
         }
     }

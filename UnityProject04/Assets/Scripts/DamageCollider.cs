@@ -38,5 +38,13 @@ namespace MYR
                 }
             }
         }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.tag.Equals("Enemy"))
+            {
+                DisableCollider();
+            }
+        }
     }
 }

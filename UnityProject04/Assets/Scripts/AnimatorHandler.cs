@@ -47,6 +47,16 @@ namespace MYR
             return animator.GetBool("IsInteracting");
         }
 
+        public void SetIsBeingHit(bool isBeingHit)
+        {
+            animator.SetBool("IsBeingHit", isBeingHit);
+        }
+
+        public bool GetIsBeingHit()
+        {
+            return animator.GetBool("IsBeingHit");
+        }
+
         private void OnAnimatorMove()
         {
             if (!animator.GetBool("IsInteracting"))
