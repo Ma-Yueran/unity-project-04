@@ -57,6 +57,21 @@ namespace MYR
             return animator.GetBool("IsBeingHit");
         }
 
+        public bool GetCanRotate()
+        {
+            return animator.GetBool("CanRotate");
+        }
+
+        public void EnableRotation()
+        {
+            animator.SetBool("CanRotate", true);
+        }
+
+        public void DisableRotation()
+        {
+            animator.SetBool("CanRotate", false);
+        }
+
         private void OnAnimatorMove()
         {
             if (!animator.GetBool("IsInteracting"))

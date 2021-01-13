@@ -26,6 +26,11 @@ namespace MYR
 
         public void HandleMovement()
         {
+            if (animatorHandler.GetCanRotate())
+            {
+                HandleRotation();
+            }
+
             if (animatorHandler.GetIsInteracting())
             {
                 return;
@@ -54,14 +59,17 @@ namespace MYR
                 // Set animation state
                 animatorHandler.SetState(AnimatorHandler.WALK);
             }
-
-            HandleRotation();
         }
 
         private void HandleRotation()
         {
+            if (!playerControls.isMoving)
+            {
+                return;
+            }
+
             Quaternion targetDirection = Quaternion.LookRotation(playerControls.GetTargetDirection());
-            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetDirection, 0.1f);
+            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetDirection, 0.05f);
         }
     }
 }
