@@ -6,6 +6,6 @@ namespace MYR
 {
     public abstract class Stats : MonoBehaviour
     {
-        public abstract void TakeDamage(int amount);
+        public abstract void TakeDamage(int amount, string hitAnimation);
     }
 }

@@ -17,7 +17,7 @@ namespace MYR
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
-        public override void TakeDamage(int amount)
+        public override void TakeDamage(int amount, string hitAnimation)
         {
             currentHealth -= amount;
 
@@ -26,14 +26,9 @@ namespace MYR
                 currentHealth = 0;
                 animatorHandler.PlayAnimation("Death", true);
             }
-            else if (!animatorHandler.GetIsBeingHit())
-            {
-                animatorHandler.SetIsBeingHit(true);
-                animatorHandler.PlayAnimation("Hit01", true);
-            }
             else
             {
-                animatorHandler.PlayAnimation("Hit02", true);
+                animatorHandler.PlayAnimation(hitAnimation, true);
             }
         }
     }

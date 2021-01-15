@@ -17,7 +17,7 @@ namespace MYR
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
-        public override void TakeDamage(int amount)
+        public override void TakeDamage(int amount, string hitAnimation)
         {
             currentHealth -= amount;
 

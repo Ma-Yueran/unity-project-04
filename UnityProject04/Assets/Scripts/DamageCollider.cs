@@ -9,6 +9,7 @@ namespace MYR
         public int damage = 30;
 
         private new Collider collider;
+        private string hitAnimation;
 
         private void Awake()
         {
@@ -26,6 +27,11 @@ namespace MYR
             collider.enabled = false;
         }
 
+        public void SetHitAnimation(string hitAnimation)
+        {
+            this.hitAnimation = hitAnimation;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag.Equals("Enemy"))
@@ -34,7 +40,7 @@ namespace MYR
 
                 if (stats != null)
                 {
-                    stats.TakeDamage(damage);
+                    stats.TakeDamage(damage, hitAnimation);
                     DisableCollider();
                 }
             }

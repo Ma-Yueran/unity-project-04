@@ -49,16 +49,6 @@ namespace MYR
             return animator.GetBool("IsInteracting");
         }
 
-        public void SetIsBeingHit(bool isBeingHit)
-        {
-            animator.SetBool("IsBeingHit", isBeingHit);
-        }
-
-        public bool GetIsBeingHit()
-        {
-            return animator.GetBool("IsBeingHit");
-        }
-
         public bool GetCanRotate()
         {
             return animator.GetBool("CanRotate");
@@ -86,7 +76,7 @@ namespace MYR
 
         private void OnAnimatorMove()
         {
-            if (!animator.GetBool("IsInteracting") || frontGroundCheck.isFrontEmpty)
+            if (!animator.GetBool("IsInteracting")) //|| frontGroundCheck.isFrontEmpty)
             {
                 return;
             }

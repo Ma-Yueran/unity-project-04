@@ -34,5 +34,10 @@ namespace MYR
         {
             animator.SetBool("CanCombo", false);
         }
+
+        public void SetHitAnimation(string hitAnimation)
+        {
+            weaponDamageCollider.SetHitAnimation(hitAnimation);
+        }
     }
 }
