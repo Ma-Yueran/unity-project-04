@@ -15,8 +15,6 @@ namespace MYR
 
         public int currentAnimationState = 0;
 
-        public FrontGroundCheck frontGroundCheck;
-
         private Animator animator;
         private new Rigidbody rigidbody;
 
@@ -76,7 +74,7 @@ namespace MYR
 
         private void OnAnimatorMove()
         {
-            if (!animator.GetBool("IsInteracting")) //|| frontGroundCheck.isFrontEmpty)
+            if (!animator.GetBool("IsInteracting"))
             {
                 return;
             }

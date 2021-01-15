@@ -594,64 +594,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &938109681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 938109682}
-  - component: {fileID: 938109683}
-  - component: {fileID: 938109684}
-  m_Layer: 8
-  m_Name: Front Ground Check
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &938109682
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938109681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1977078078}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &938109683
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938109681}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: -0.2, z: 1.3}
---- !u!114 &938109684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938109681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cf4babc171b3464097be8c74630c465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFrontEmpty: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +803,6 @@ Transform:
   m_Children:
   - {fileID: 1839838937508101684}
   - {fileID: 798940287}
-  - {fileID: 938109682}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -898,7 +839,8 @@ MonoBehaviour:
   isMoving: 0
   isRunning: 0
   dodgeFlag: 0
-  attackFlag: 0
+  attackFlag01: 0
+  attackFlag02: 0
   comboFlag: 0
 --- !u!114 &1977078081
 MonoBehaviour:
@@ -2275,7 +2217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAnimationState: 0
-  frontGroundCheck: {fileID: 938109684}
 --- !u!1 &1839838937508323864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,7 +4048,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAnimationState: 0
-  frontGroundCheck: {fileID: 0}
 --- !u!1 &7351309865175832589
 GameObject:
   m_ObjectHideFlags: 0

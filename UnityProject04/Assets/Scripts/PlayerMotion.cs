@@ -81,7 +81,6 @@ namespace MYR
             {
                 animatorHandler.SetIsFalling(true);
                 transform.position += transform.forward * fallingForwardSpeed * Time.deltaTime;
-                
             }
 
             if (groundCheck.IsLanding())
