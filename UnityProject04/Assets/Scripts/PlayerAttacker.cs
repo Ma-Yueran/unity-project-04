@@ -26,9 +26,14 @@ namespace MYR {
                 return;
             }
 
-            if (playerControls.attackFlag)
+            if (playerControls.attackFlag01)
             {
-                animatorHandler.PlayAnimation("Light_Attack_01", true);
+                animatorHandler.PlayAnimation("Attack_01", true);
+            }
+
+            if (playerControls.attackFlag02)
+            {
+                animatorHandler.PlayAnimation("Light_Attack_Low", true);
             }
         }
     }

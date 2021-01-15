@@ -18,7 +18,8 @@ namespace MYR
 
         [Header("Flags")]
         public bool dodgeFlag;
-        public bool attackFlag;
+        public bool attackFlag01;
+        public bool attackFlag02;
         public bool comboFlag;
 
         private float keyDownTime;
@@ -54,7 +55,8 @@ namespace MYR
         public void ResetFlags()
         {
             dodgeFlag = false;
-            attackFlag = false;
+            attackFlag01 = false;
+            attackFlag02 = false;
             comboFlag = false;
         }
 
@@ -86,8 +88,13 @@ namespace MYR
                 }
                 else
                 {
-                    attackFlag = true;
+                    attackFlag01 = true;
                 }
+            }
+           
+            if (Input.GetMouseButtonDown(1))
+            {
+                attackFlag02 = true;
             }
         }
     }
