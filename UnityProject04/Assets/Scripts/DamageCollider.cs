@@ -8,11 +8,16 @@ namespace MYR
     {
         public int damage = 30;
 
+        private ParryHandler myParryHandler;
+
         private new Collider collider;
         private string hitAnimation;
+        private string parryAnimation;
+        private string parriedAnimation;
 
         private void Awake()
         {
+            myParryHandler = GetComponentInParent<ParryHandler>();
             collider = GetComponent<Collider>();
             DisableCollider();
         }
@@ -32,6 +37,16 @@ namespace MYR
             this.hitAnimation = hitAnimation;
         }
 
+        public void SetParryAnimation(string parryAnimation)
+        {
+            this.parryAnimation = parryAnimation;
+        }
+
+        public void SetParriedAnimation(string parriedAnimation)
+        {
+            this.parriedAnimation = parriedAnimation;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag.Equals("Enemy"))
@@ -43,6 +58,13 @@ namespace MYR
                     stats.TakeDamage(damage, hitAnimation);
                     DisableCollider();
                 }
+            }
+            else if (other.tag.Equals("Parry Detector"))
+            {
+                ParryHandler parryHandler = other.GetComponentInParent<ParryHandler>();
+                parryHandler.Parry(parryAnimation, myParryHandler.transform);
+                myParryHandler.Parried(parriedAnimation);
+                DisableCollider();
             }
         }
     }

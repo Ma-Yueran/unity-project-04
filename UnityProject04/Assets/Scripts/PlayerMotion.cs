@@ -15,6 +15,7 @@ namespace MYR
         public float fallingForwardSpeed = 1.5f;
 
         private Transform myTransform;
+        private Rigidbody myRigidbody;
         private PlayerControls playerControls;
         private AnimatorHandler animatorHandler;
         private GroundCheck groundCheck;
@@ -22,6 +23,7 @@ namespace MYR
         private void Awake()
         {
             myTransform = transform;
+            myRigidbody = GetComponent<Rigidbody>();
             playerControls = GetComponent<PlayerControls>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             groundCheck = GetComponentInChildren<GroundCheck>();

@@ -39,5 +39,15 @@ namespace MYR
         {
             weaponDamageCollider.SetHitAnimation(hitAnimation);
         }
+
+        public void SetParryAnimation(string parryAnimation)
+        {
+            weaponDamageCollider.SetParryAnimation(parryAnimation);
+        }
+
+        public void SetParriedAnimation(string parriedAnimation)
+        {
+            weaponDamageCollider.SetParriedAnimation(parriedAnimation);
+        }
     }
 }
