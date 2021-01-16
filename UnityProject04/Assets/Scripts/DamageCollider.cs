@@ -11,6 +11,7 @@ namespace MYR
         private ParryHandler myParryHandler;
 
         private new Collider collider;
+
         private string hitAnimation;
         private string parryAnimation;
         private string parriedAnimation;

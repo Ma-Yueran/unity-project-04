@@ -259,7 +259,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.25
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
@@ -444,8 +444,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.2, z: 0.15}
-  m_Center: {x: 0, y: 0.8, z: 0.25}
+  m_Size: {x: 0.8, y: 1.6, z: 0.15}
+  m_Center: {x: 0, y: 1, z: 0.25}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,6 +2376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839838937508101684}
   - component: {fileID: 1839838937515610516}
+  - component: {fileID: 1839838937508323867}
   - component: {fileID: 1839838937508323863}
   - component: {fileID: 1839838937508323865}
   m_Layer: 0
@@ -2443,6 +2444,54 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1839838937508323867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839838937508323862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e982d99d3aef3c44b6fa7e2d1903ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: SFX_Parry01
+    audioClip: {fileID: 8300000, guid: fdd300fc6620b3a4bb77f2d86d4078ac, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 1575027312}
+    source: {fileID: 0}
+  - soundName: SFX_Parry02
+    audioClip: {fileID: 8300000, guid: 357397af6b7e84d4581f2f8e5052e71d, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 1575027312}
+    source: {fileID: 0}
+  - soundName: SFX_Roar01
+    audioClip: {fileID: 8300000, guid: ead871b347f9ccc40a7ca291b4c3e66a, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 1977078077}
+    source: {fileID: 0}
+  - soundName: SFX_Swish01
+    audioClip: {fileID: 8300000, guid: 18bdfe673da32724f93121709bc23984, type: 3}
+    volume: 0.03
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 1575027312}
+    source: {fileID: 0}
+  - soundName: SFX_Swish02
+    audioClip: {fileID: 8300000, guid: 69b28ff7e89316f479ca54e53889baf6, type: 3}
+    volume: 0.03
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 1575027312}
+    source: {fileID: 0}
 --- !u!1 &1839838937508323868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4209,6 +4258,7 @@ GameObject:
   - component: {fileID: 7351309865176187945}
   - component: {fileID: 7351309865168415625}
   - component: {fileID: 7351309865175832588}
+  - component: {fileID: 7351309865175832590}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -4246,6 +4296,68 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7351309865175832590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7351309865175832587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e982d99d3aef3c44b6fa7e2d1903ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: SFX_Hit_Bleed01
+    audioClip: {fileID: 8300000, guid: 1418f80fed4396146a20dc60e8c77859, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: SFX_Hit_Bleed02
+    audioClip: {fileID: 8300000, guid: 6dea890f01ef2e247becd701f88a7690, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: SFX_Hit_Bleed03
+    audioClip: {fileID: 8300000, guid: 5fa1d99c72433bb458695137659d5d56, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: SFX_Hit_Pain01
+    audioClip: {fileID: 8300000, guid: 42bc40bc858b45941b28e8d7a3d4fe15, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: SFX_Hit_Pain02
+    audioClip: {fileID: 8300000, guid: 6e1c7485e32cf1048bb222cad98f09a4, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: SFX_Hit_Pain03
+    audioClip: {fileID: 8300000, guid: 6876ef5da99936c4b952d645cc14dae5, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: SFX_Hit_Death
+    audioClip: {fileID: 8300000, guid: 1fffea99e4c375640aeb6666d5bdbd65, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
 --- !u!1 &7351309865175832591
 GameObject:
   m_ObjectHideFlags: 0
