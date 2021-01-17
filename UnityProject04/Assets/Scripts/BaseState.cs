@@ -6,6 +6,6 @@ namespace MYR
 {
     public abstract class BaseState
     {
-        public abstract BaseState Tick();
+        public abstract System.Type Tick();
     }
 }

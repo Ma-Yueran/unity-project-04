@@ -19,11 +19,11 @@ namespace MYR
             this.playerDetector = playerDetector;
         }
 
-        public override BaseState Tick()
+        public override System.Type Tick()
         {
             if (playerDetector.GetDistanceToPlayer() < 8)
             {
-                return null;
+                return typeof(ChaseState);
             }
 
             Wander();

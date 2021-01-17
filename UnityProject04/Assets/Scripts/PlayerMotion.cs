@@ -13,6 +13,7 @@ namespace MYR
         public float walkSpeed = 2.5f;
         public float runSpeed = 4f;
         public float fallingForwardSpeed = 1.5f;
+        public float rotateSpeed = 10f;
 
         private Transform myTransform;
         private PlayerControls playerControls;
@@ -72,7 +73,8 @@ namespace MYR
             }
 
             Quaternion targetDirection = Quaternion.LookRotation(playerControls.GetTargetDirection());
-            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetDirection, 0.05f);
+            float rotateSpeed = Mathf.Clamp(this.rotateSpeed * Time.deltaTime, 0.1f, 0.9f);
+            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetDirection, rotateSpeed);
         }
 
         public void HandleFalling()

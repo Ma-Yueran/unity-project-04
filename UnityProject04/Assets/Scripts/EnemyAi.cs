@@ -25,6 +25,7 @@ namespace MYR
         {
             availableStates = new Dictionary<Type, BaseState>();
             availableStates.Add(typeof(WanderState), new WanderState(enemyMotion, playerDetector));
+            availableStates.Add(typeof(ChaseState), new ChaseState(enemyMotion, playerDetector));
         }
 
         private void InitState()
@@ -34,14 +35,14 @@ namespace MYR
 
         private void Update()
         {
-            BaseState nextState = currentState.Tick();
+            Type nextState = currentState.Tick();
 
             if (nextState == null)
             {
                 return;
             }
 
-            currentState = nextState;
+            currentState = availableStates[nextState];
         }
     }
 }

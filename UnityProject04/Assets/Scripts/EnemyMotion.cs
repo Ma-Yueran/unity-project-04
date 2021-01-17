@@ -7,6 +7,7 @@ namespace MYR
     public class EnemyMotion : MonoBehaviour
     {
         public float walkSpeed = 2.5f;
+        public float rotateSpeed = 10f;
 
         private Transform myTransform;
         private AnimatorHandler animatorHandler;
@@ -42,7 +43,8 @@ namespace MYR
             }
 
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetRotation, 0.1f);
+            float rotateSpeed = Mathf.Clamp(this.rotateSpeed * Time.deltaTime, 0.1f, 0.9f);
+            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetRotation, rotateSpeed);
         }
     }
 }

@@ -19,5 +19,10 @@ namespace MYR
         {
             return Vector3.Distance(myTransform.position, player.position);
         }
+
+        public Vector3 GetDirectionToPlayer()
+        {
+            return player.position - myTransform.position;
+        }
     }
 }

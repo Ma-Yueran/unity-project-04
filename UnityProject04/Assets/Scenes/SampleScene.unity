@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 2.5
+  rotateSpeed: 10
 --- !u!114 &399648253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,6 +939,7 @@ MonoBehaviour:
   walkSpeed: 2.5
   runSpeed: 4
   fallingForwardSpeed: 1.5
+  rotateSpeed: 10
 --- !u!114 &1977078080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2428,14 +2430,14 @@ MonoBehaviour:
     source: {fileID: 0}
   - soundName: SFX_Swish01
     audioClip: {fileID: 8300000, guid: 18bdfe673da32724f93121709bc23984, type: 3}
-    volume: 0.03
+    volume: 0.2
     pitch: 1
     loop: 0
     sourceObject: {fileID: 1575027312}
     source: {fileID: 0}
   - soundName: SFX_Swish02
     audioClip: {fileID: 8300000, guid: 69b28ff7e89316f479ca54e53889baf6, type: 3}
-    volume: 0.03
+    volume: 0.2
     pitch: 1
     loop: 0
     sourceObject: {fileID: 1575027312}
