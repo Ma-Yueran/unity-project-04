@@ -27,7 +27,20 @@ namespace MYR
             }
             else if (playerDetector.GetDistanceToPlayer() < 2.5f)
             {
-                return typeof(DodgeState);
+                int nextDecision = Random.Range(0, 3);
+
+                if (nextDecision == 0)
+                {
+                    return typeof(DodgeState);
+                }
+                else if (nextDecision == 1)
+                {
+                    return typeof(TauntState);
+                }
+                else
+                {
+                    return typeof(AttackState);
+                }
             }
             else
             {

@@ -4,17 +4,17 @@ using UnityEngine;
 
 namespace MYR
 {
-    public class DodgeState : BaseState
+    public class AttackState : BaseState
     {
         private AnimatorHandler animatorHandler;
-        private EnemyMotion enemyMotion;
+        private EnemyAttacker enemyAttacker;
 
-        private bool isAnimationPlayed;
+        private bool isAnimationPlayed = false;
 
-        public DodgeState(AnimatorHandler animatorHandler, EnemyMotion enemyMotion)
+        public AttackState(AnimatorHandler animatorHandler, EnemyAttacker enemyAttacker)
         {
             this.animatorHandler = animatorHandler;
-            this.enemyMotion = enemyMotion;
+            this.enemyAttacker = enemyAttacker;
         }
 
         public override System.Type Tick()
@@ -26,8 +26,9 @@ namespace MYR
 
             if (!isAnimationPlayed)
             {
+                int comboNum = Random.Range(0, 2);
+                enemyAttacker.Attack(comboNum);
                 isAnimationPlayed = true;
-                enemyMotion.Dodge(enemyMotion.myTransform.position - enemyMotion.myTransform.forward);
             }
             else
             {

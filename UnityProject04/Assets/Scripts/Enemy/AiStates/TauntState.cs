@@ -1,23 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace MYR
 {
-    public class DodgeState : BaseState
+    public class TauntState : BaseState
     {
         private AnimatorHandler animatorHandler;
-        private EnemyMotion enemyMotion;
 
-        private bool isAnimationPlayed;
+        private bool isAnimationPlayed = false;
 
-        public DodgeState(AnimatorHandler animatorHandler, EnemyMotion enemyMotion)
+        public TauntState(AnimatorHandler animatorHandler)
         {
             this.animatorHandler = animatorHandler;
-            this.enemyMotion = enemyMotion;
         }
 
-        public override System.Type Tick()
+        public override Type Tick()
         {
             if (animatorHandler.GetIsInteracting())
             {
@@ -26,8 +25,8 @@ namespace MYR
 
             if (!isAnimationPlayed)
             {
+                animatorHandler.PlayAnimation("Taunt", true);
                 isAnimationPlayed = true;
-                enemyMotion.Dodge(enemyMotion.myTransform.position - enemyMotion.myTransform.forward);
             }
             else
             {

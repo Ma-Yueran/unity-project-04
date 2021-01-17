@@ -78,6 +78,11 @@ namespace MYR
             animator.SetFloat("InputAngle", angle);
         }
 
+        public void SetComboNum(int comboNum)
+        {
+            animator.SetInteger("ComboNum", comboNum);
+        }
+
         private void OnAnimatorMove()
         {
             if (!animator.GetBool("IsInteracting"))

@@ -28,7 +28,7 @@ namespace MYR
             }
             else
             {
-                animatorHandler.PlayAnimation("Hit", true);
+                animatorHandler.PlayAnimation(hitAnimation, true);
             }
         }
     }

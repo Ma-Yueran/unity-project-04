@@ -7,6 +7,7 @@ namespace MYR
     public class DamageCollider : MonoBehaviour
     {
         public int damage = 30;
+        public string targetTag;
 
         private ParryHandler myParryHandler;
 
@@ -50,7 +51,7 @@ namespace MYR
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag.Equals("Enemy"))
+            if (other.tag.Equals(targetTag))
             {
                 Stats stats = other.GetComponent<Stats>();
 
