@@ -68,12 +68,7 @@ namespace MYR
 
         public void Dodge(Vector3 targetDirection)
         {
-            if (animatorHandler.GetIsInteracting())
-            {
-                return;
-            }
-
-            myTransform.LookAt(myTransform.position + targetDirection);
+            myTransform.LookAt(targetDirection);
             animatorHandler.PlayAnimation("Dodge", true);
         }
     }

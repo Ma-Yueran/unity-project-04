@@ -7,20 +7,18 @@ namespace MYR
 {
     public class EnemyAi : MonoBehaviour
     {
+        private AnimatorHandler animatorHandler;
         private EnemyMotion enemyMotion;
         private PlayerDetector playerDetector;
-        private EnemyAttacker enemyAttacker;
-        private AnimatorHandler animatorHandler;
 
         private Dictionary<Type, BaseState> availableStates;
         private BaseState currentState;
 
         private void Awake()
         {
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
             enemyMotion = GetComponent<EnemyMotion>();
             playerDetector = GetComponent<PlayerDetector>();
-            enemyAttacker = GetComponent<EnemyAttacker>();
-            animatorHandler = GetComponentInChildren<AnimatorHandler>();
             SetupStateDictionary();
             InitState();
         }
@@ -30,6 +28,8 @@ namespace MYR
             availableStates = new Dictionary<Type, BaseState>();
             availableStates.Add(typeof(WanderState), new WanderState(enemyMotion, playerDetector));
             availableStates.Add(typeof(ChaseState), new ChaseState(enemyMotion, playerDetector));
+            availableStates.Add(typeof(ApproachState), new ApproachState(enemyMotion, playerDetector));
+            availableStates.Add(typeof(DodgeState), new DodgeState(animatorHandler, enemyMotion));
         }
 
         private void InitState()

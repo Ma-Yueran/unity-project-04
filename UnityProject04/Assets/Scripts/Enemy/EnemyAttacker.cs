@@ -13,7 +13,7 @@ namespace MYR
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
-        public void Attack(int comboNum)
+        public void Attack()
         {
             if (animatorHandler.GetIsInteracting())
             {
@@ -21,7 +21,6 @@ namespace MYR
             }
 
             animatorHandler.PlayAnimation("Attack01", true);
-            animatorHandler.SetComboNum(comboNum);
         }
     }
 }

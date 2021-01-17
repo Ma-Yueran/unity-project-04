@@ -27,8 +27,7 @@ namespace MYR
             }
             else
             {
-                // enter combat state
-                return null;
+                return typeof(ApproachState);
             }
         }
     }
