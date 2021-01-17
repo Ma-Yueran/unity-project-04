@@ -8,6 +8,7 @@ namespace MYR
     {
         public float walkSpeed = 2.5f;
         public float rotateSpeed = 10f;
+        public float lockingWalkSpeed = 1.8f;
 
         public Transform myTransform;
         private AnimatorHandler animatorHandler;
@@ -37,7 +38,7 @@ namespace MYR
 
         public void Rotate(Vector3 targetDirection)
         {
-            if (animatorHandler.GetIsInteracting())
+            if (animatorHandler.GetIsInteracting() || !animatorHandler.GetCanRotate())
             {
                 return;
             }
@@ -57,12 +58,23 @@ namespace MYR
             myTransform.LookAt(targetPosition);
 
             walkDirection.Normalize();
-            myTransform.position += walkDirection * walkSpeed * Time.deltaTime;
+            myTransform.position += walkDirection * lockingWalkSpeed * Time.deltaTime;
 
             float inputAngle = Vector3.SignedAngle(walkDirection, myTransform.forward, Vector3.up);
             animatorHandler.SetInputAngle(inputAngle);
 
             animatorHandler.SetState(AnimatorHandler.LOCKING_WALK);
+        }
+
+        public void Dodge(Vector3 targetDirection)
+        {
+            if (animatorHandler.GetIsInteracting())
+            {
+                return;
+            }
+
+            myTransform.LookAt(myTransform.position + targetDirection);
+            animatorHandler.PlayAnimation("Dodge", true);
         }
     }
 }

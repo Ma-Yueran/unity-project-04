@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 399648251}
   - component: {fileID: 399648252}
   - component: {fileID: 399648253}
+  - component: {fileID: 399648254}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -244,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2.5
   rotateSpeed: 10
+  lockingWalkSpeed: 1.8
   myTransform: {fileID: 0}
 --- !u!114 &399648253
 MonoBehaviour:
@@ -258,6 +260,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1977078078}
+--- !u!114 &399648254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399648245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09de87de64f96394d9f956188e8798d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &478883922
 GameObject:
   m_ObjectHideFlags: 0

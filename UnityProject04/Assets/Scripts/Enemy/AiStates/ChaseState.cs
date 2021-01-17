@@ -27,7 +27,7 @@ namespace MYR
             }
             else
             {
-                enemyMotion.LockingWalk(enemyMotion.myTransform.right, playerDetector.player.position);
+                // enter combat state
                 return null;
             }
         }

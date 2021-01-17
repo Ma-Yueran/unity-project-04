@@ -9,6 +9,8 @@ namespace MYR
     {
         private EnemyMotion enemyMotion;
         private PlayerDetector playerDetector;
+        private EnemyAttacker enemyAttacker;
+        private AnimatorHandler animatorHandler;
 
         private Dictionary<Type, BaseState> availableStates;
         private BaseState currentState;
@@ -17,6 +19,8 @@ namespace MYR
         {
             enemyMotion = GetComponent<EnemyMotion>();
             playerDetector = GetComponent<PlayerDetector>();
+            enemyAttacker = GetComponent<EnemyAttacker>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
             SetupStateDictionary();
             InitState();
         }
