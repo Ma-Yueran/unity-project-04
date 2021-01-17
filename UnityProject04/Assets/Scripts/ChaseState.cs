@@ -17,7 +17,7 @@ namespace MYR
 
         public override System.Type Tick()
         {
-            if (playerDetector.GetDistanceToPlayer() > 2)
+            if (playerDetector.GetDistanceToPlayer() > 5)
             {
                 Vector3 targetDirection = playerDetector.GetDirectionToPlayer();
                 targetDirection.y = 0;
@@ -27,7 +27,7 @@ namespace MYR
             }
             else
             {
-                enemyMotion.Idle();
+                enemyMotion.LockingWalk(enemyMotion.myTransform.right, playerDetector.player.position);
                 return null;
             }
         }

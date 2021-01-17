@@ -9,7 +9,7 @@ namespace MYR
         public float walkSpeed = 2.5f;
         public float rotateSpeed = 10f;
 
-        private Transform myTransform;
+        public Transform myTransform;
         private AnimatorHandler animatorHandler;
 
         private void Awake()
@@ -45,6 +45,24 @@ namespace MYR
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
             float rotateSpeed = Mathf.Clamp(this.rotateSpeed * Time.deltaTime, 0.1f, 0.9f);
             myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetRotation, rotateSpeed);
+        }
+
+        public void LockingWalk(Vector3 walkDirection, Vector3 targetPosition)
+        {
+            if (animatorHandler.GetIsInteracting())
+            {
+                return;
+            }
+
+            myTransform.LookAt(targetPosition);
+
+            walkDirection.Normalize();
+            myTransform.position += walkDirection * walkSpeed * Time.deltaTime;
+
+            float inputAngle = Vector3.SignedAngle(walkDirection, myTransform.forward, Vector3.up);
+            animatorHandler.SetInputAngle(inputAngle);
+
+            animatorHandler.SetState(AnimatorHandler.LOCKING_WALK);
         }
     }
 }

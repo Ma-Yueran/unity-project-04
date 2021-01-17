@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2.5
   rotateSpeed: 10
+  myTransform: {fileID: 0}
 --- !u!114 &399648253
 MonoBehaviour:
   m_ObjectHideFlags: 0

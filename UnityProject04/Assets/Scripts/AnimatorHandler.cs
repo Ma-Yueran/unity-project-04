@@ -12,6 +12,7 @@ namespace MYR
         public static readonly int IDLE = 0;
         public static readonly int WALK = 1;
         public static readonly int RUN = 2;
+        public static readonly int LOCKING_WALK = 3;
 
         public int currentAnimationState = 0;
 
@@ -70,6 +71,11 @@ namespace MYR
         public bool GetIsFalling()
         {
             return animator.GetBool("IsFalling");
+        }
+
+        public void SetInputAngle(float angle)
+        {
+            animator.SetFloat("InputAngle", angle);
         }
 
         private void OnAnimatorMove()
