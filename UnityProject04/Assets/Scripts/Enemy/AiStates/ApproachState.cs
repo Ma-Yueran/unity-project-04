@@ -37,6 +37,10 @@ namespace MYR
                 {
                     return typeof(TauntState);
                 }
+                else if (nextDecision <= 5)
+                {
+                    return typeof(IdleState);
+                }
                 else
                 {
                     return typeof(AttackState);

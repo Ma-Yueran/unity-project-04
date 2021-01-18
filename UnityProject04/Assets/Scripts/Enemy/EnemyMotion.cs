@@ -71,5 +71,10 @@ namespace MYR
             myTransform.LookAt(targetDirection);
             animatorHandler.PlayAnimation("Dodge", true);
         }
+
+        public void LookAt(Vector3 target)
+        {
+            myTransform.LookAt(target);
+        }
     }
 }

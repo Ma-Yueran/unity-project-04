@@ -34,6 +34,8 @@ namespace MYR
             availableStates.Add(typeof(DodgeState), new DodgeState(animatorHandler, enemyMotion));
             availableStates.Add(typeof(TauntState), new TauntState(animatorHandler));
             availableStates.Add(typeof(AttackState), new AttackState(animatorHandler, enemyAttacker));
+            availableStates.Add(typeof(RetreatState), new RetreatState(animatorHandler, enemyMotion, playerDetector));
+            availableStates.Add(typeof(IdleState), new IdleState(animatorHandler, enemyMotion, playerDetector));
         }
 
         private void InitState()

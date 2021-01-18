@@ -26,14 +26,28 @@ namespace MYR
 
             if (!isAnimationPlayed)
             {
-                int comboNum = Random.Range(0, 2);
+                int comboNum = Random.Range(0, 3);
                 enemyAttacker.Attack(comboNum);
                 isAnimationPlayed = true;
             }
             else
             {
                 isAnimationPlayed = false;
-                return typeof(ApproachState);
+
+                int nextDecision = Random.Range(0, 11);
+
+                if (nextDecision <= 3)
+                {
+                    return typeof(RetreatState);
+                }
+                else if (nextDecision <= 6)
+                {
+                    return typeof(DodgeState);
+                }
+                else
+                {
+                    return typeof(IdleState);
+                }
             }
 
             return null;
