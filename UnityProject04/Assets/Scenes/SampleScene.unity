@@ -382,7 +382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &685162295
 Transform:
   m_ObjectHideFlags: 0
@@ -2452,6 +2452,7 @@ GameObject:
   - component: {fileID: 1839838937508323867}
   - component: {fileID: 1839838937508323863}
   - component: {fileID: 1839838937508323865}
+  - component: {fileID: 1839838937508323869}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -2631,6 +2632,47 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1839838937508323869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839838937508323862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884bee8b8aeb0144836a6dbaf924990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: Ground_Step01
+    audioClip: {fileID: 8300000, guid: fed7d9f367f125c4b8dbd6c8ce57db70, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 798940286}
+    source: {fileID: 0}
+  - soundName: Ground_Step02
+    audioClip: {fileID: 8300000, guid: ba53d3ad03402e74280166954d79defa, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 798940286}
+    source: {fileID: 0}
+  - soundName: Sliding01
+    audioClip: {fileID: 8300000, guid: f853144bc9bedc04ab90234c017cc0c3, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 798940286}
+    source: {fileID: 0}
+  - soundName: Sliding02
+    audioClip: {fileID: 8300000, guid: fefee157bf7f93d40b38ace281d2fc34, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 798940286}
+    source: {fileID: 0}
 --- !u!1 &1839838937508323870
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,6 +4425,7 @@ GameObject:
   - component: {fileID: 7351309865175832590}
   - component: {fileID: 7351309865175832592}
   - component: {fileID: 7351309865175832594}
+  - component: {fileID: 7351309865175832596}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -4570,6 +4613,47 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7351309865175832596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7351309865175832587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884bee8b8aeb0144836a6dbaf924990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: Ground_Step01
+    audioClip: {fileID: 8300000, guid: fed7d9f367f125c4b8dbd6c8ce57db70, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: Ground_Step02
+    audioClip: {fileID: 8300000, guid: ba53d3ad03402e74280166954d79defa, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: Sliding01
+    audioClip: {fileID: 8300000, guid: f853144bc9bedc04ab90234c017cc0c3, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
+  - soundName: Sliding02
+    audioClip: {fileID: 8300000, guid: fefee157bf7f93d40b38ace281d2fc34, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    sourceObject: {fileID: 399648245}
+    source: {fileID: 0}
 --- !u!1 &7351309865175832597
 GameObject:
   m_ObjectHideFlags: 0

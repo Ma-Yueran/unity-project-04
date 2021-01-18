@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MYR
 {
-    public class AudioHandler : MonoBehaviour
+    public class FootStepAudioHandler : MonoBehaviour
     {
         public Sound[] sounds;
 
@@ -20,7 +20,7 @@ namespace MYR
             }
         }
 
-        public void PlaySound(string soundName)
+        public void PlayFootStepSound(string soundName)
         {
             foreach (Sound sound in sounds)
             {
