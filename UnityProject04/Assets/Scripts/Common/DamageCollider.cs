@@ -57,7 +57,7 @@ namespace MYR
 
                 if (stats != null)
                 {
-                    stats.TakeDamage(damage, hitAnimation);
+                    stats.TakeDamage(damage, hitAnimation, IsHitBack(other));
                     DisableCollider();
                 }
             }
@@ -68,6 +68,17 @@ namespace MYR
                 myParryHandler.Parried(parriedAnimation);
                 DisableCollider();
             }
+        }
+
+        /// <summary>
+        /// Checks if the collider is damaging the target's back
+        /// </summary>
+        /// <returns></returns>
+        private bool IsHitBack(Collider other)
+        {
+            float angle = Vector3.Angle(myParryHandler.transform.forward, other.transform.forward);
+
+            return angle < 90;
         }
     }
 }

@@ -29,15 +29,15 @@ namespace MYR
             {
                 int nextDecision = Random.Range(0, 11);
 
-                if (nextDecision <= 2)
+                if (nextDecision <= 1)
                 {
                     return typeof(DodgeState);
                 }
-                else if (nextDecision <= 4)
+                else if (nextDecision <= 3)
                 {
                     return typeof(TauntState);
                 }
-                else if (nextDecision <= 5)
+                else if (nextDecision <= 4)
                 {
                     return typeof(IdleState);
                 }

@@ -83,6 +83,16 @@ namespace MYR
             animator.SetInteger("ComboNum", comboNum);
         }
 
+        public void HitBack01Playing()
+        {
+            animator.SetBool("IsHitBack01Playing", true);
+        }
+
+        public bool GetIsHitBack01Playing()
+        {
+            return animator.GetBool("IsHitBack01Playing");
+        }
+
         private void OnAnimatorMove()
         {
             if (!animator.GetBool("IsInteracting"))
