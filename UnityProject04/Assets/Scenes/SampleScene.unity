@@ -2699,14 +2699,14 @@ MonoBehaviour:
   sounds:
   - soundName: Ground_Step01
     audioClip: {fileID: 8300000, guid: fed7d9f367f125c4b8dbd6c8ce57db70, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     loop: 0
     sourceObject: {fileID: 798940286}
     source: {fileID: 0}
   - soundName: Ground_Step02
     audioClip: {fileID: 8300000, guid: ba53d3ad03402e74280166954d79defa, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     loop: 0
     sourceObject: {fileID: 798940286}
@@ -4680,14 +4680,14 @@ MonoBehaviour:
   sounds:
   - soundName: Ground_Step01
     audioClip: {fileID: 8300000, guid: fed7d9f367f125c4b8dbd6c8ce57db70, type: 3}
-    volume: 0.3
+    volume: 0.1
     pitch: 1
     loop: 0
     sourceObject: {fileID: 399648245}
     source: {fileID: 0}
   - soundName: Ground_Step02
     audioClip: {fileID: 8300000, guid: ba53d3ad03402e74280166954d79defa, type: 3}
-    volume: 0.3
+    volume: 0.1
     pitch: 1
     loop: 0
     sourceObject: {fileID: 399648245}
