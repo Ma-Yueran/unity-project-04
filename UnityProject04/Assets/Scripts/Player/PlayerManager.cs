@@ -6,6 +6,7 @@ namespace MYR
 {
     public class PlayerManager : MonoBehaviour
     {
+        private ThirdPersonCamera thirdPersonCamera;
         private PlayerControls playerControls;
         private PlayerMotion playerMotion;
         private PlayerAttacker playerAttacker;
@@ -17,9 +18,16 @@ namespace MYR
             playerAttacker = GetComponent<PlayerAttacker>();
         }
 
+        private void Start()
+        {
+            thirdPersonCamera = ThirdPersonCamera.instance;
+        }
+
         private void Update()
         {
             playerControls.HandlePlayerInputs();
+            
+            thirdPersonCamera.HandleLockOn();
             playerMotion.HandleMovement();
             playerMotion.HandleFalling();
             playerAttacker.HandleAttack();

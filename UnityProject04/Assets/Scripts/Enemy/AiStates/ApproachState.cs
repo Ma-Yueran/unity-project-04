@@ -61,7 +61,7 @@ namespace MYR
 
         public float GetNextUpdateTime()
         {
-            return Time.time + Random.Range(1f, 2f);
+            return Time.time + Random.Range(2f, 4f);
         }
     }
 }

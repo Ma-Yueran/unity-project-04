@@ -21,6 +21,7 @@ namespace MYR
         public bool attackFlag01;
         public bool attackFlag02;
         public bool comboFlag;
+        public bool lockOnFlag;
 
         private float keyDownTime;
         private float keyReactionTime = 0.3f;
@@ -48,8 +49,12 @@ namespace MYR
             inputV = Input.GetAxis("Vertical");
             isMoving = inputH != 0 || inputV != 0;
 
+            animator.SetFloat("InputH", inputH);
+            animator.SetFloat("InputV", inputV);
+
             HandleDodgeAndRunInput();
             HandleAttackAndComboInput();
+            HandleLockOnInput();
         }
 
         public void ResetFlags()
@@ -58,6 +63,7 @@ namespace MYR
             attackFlag01 = false;
             attackFlag02 = false;
             comboFlag = false;
+            lockOnFlag = false;
         }
 
         private void HandleDodgeAndRunInput()
@@ -95,6 +101,14 @@ namespace MYR
             if (Input.GetMouseButtonDown(1))
             {
                 attackFlag02 = true;
+            }
+        }
+
+        private void HandleLockOnInput()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                lockOnFlag = true;
             }
         }
     }

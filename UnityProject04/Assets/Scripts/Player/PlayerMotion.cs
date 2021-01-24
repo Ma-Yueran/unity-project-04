@@ -12,6 +12,7 @@ namespace MYR
     {
         public float walkSpeed = 2.5f;
         public float runSpeed = 4f;
+        public float lockWalkSpeed = 2f;
         public float fallingForwardSpeed = 1.5f;
         public float rotateSpeed = 10f;
 
@@ -19,6 +20,7 @@ namespace MYR
         private PlayerControls playerControls;
         private AnimatorHandler animatorHandler;
         private GroundCheck groundCheck;
+        private ThirdPersonCamera thirdPersonCamera;
 
         private void Awake()
         {
@@ -26,6 +28,11 @@ namespace MYR
             playerControls = GetComponent<PlayerControls>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             groundCheck = GetComponentInChildren<GroundCheck>();
+        }
+
+        private void Start()
+        {
+            thirdPersonCamera = ThirdPersonCamera.instance;
         }
 
         public void HandleMovement()
@@ -37,6 +44,13 @@ namespace MYR
 
             if (animatorHandler.GetIsInteracting() || animatorHandler.GetIsFalling())
             {
+                return;
+            }
+
+            if (thirdPersonCamera.isLockingOn)
+            {
+                HandleLockOnMovement();
+
                 return;
             }
 
@@ -67,14 +81,39 @@ namespace MYR
 
         private void HandleRotation()
         {
+            float rotateSpeed;
+            Quaternion targetRotation;
+
+            if (thirdPersonCamera.isLockingOn && animatorHandler.GetCanRotate())
+            {
+                targetRotation = Quaternion.LookRotation(thirdPersonCamera.currentLockOn.position - myTransform.position);
+                rotateSpeed = Mathf.Clamp(this.rotateSpeed * Time.deltaTime, 0.1f, 0.9f);
+                myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetRotation, rotateSpeed);
+                return;
+            }
+
             if (!playerControls.isMoving)
             {
                 return;
             }
 
-            Quaternion targetDirection = Quaternion.LookRotation(playerControls.GetTargetDirection());
-            float rotateSpeed = Mathf.Clamp(this.rotateSpeed * Time.deltaTime, 0.1f, 0.9f);
-            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetDirection, rotateSpeed);
+            targetRotation = Quaternion.LookRotation(playerControls.GetTargetDirection());
+            rotateSpeed = Mathf.Clamp(this.rotateSpeed * Time.deltaTime, 0.1f, 0.9f);
+            myTransform.rotation = Quaternion.Lerp(myTransform.rotation, targetRotation, rotateSpeed);
+        }
+
+        private void HandleLockOnMovement()
+        {
+            if (playerControls.dodgeFlag)
+            {
+                myTransform.LookAt(myTransform.position + playerControls.GetTargetDirection());
+                animatorHandler.PlayAnimation("Sword1h_Dodge_Fwd", true);
+                return;
+            }
+
+            myTransform.position += playerControls.GetTargetDirection() * lockWalkSpeed * Time.deltaTime;
+            // Set animation state
+            animatorHandler.SetState(AnimatorHandler.LOCKING_WALK);
         }
 
         public void HandleFalling()
