@@ -226,7 +226,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399648245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1b6509a79f728349b27a86910a8bce0, type: 3}
   m_Name: 
@@ -604,6 +604,8 @@ MonoBehaviour:
   smoothTime: 0.3
   maxLockDistance: 20
   maxLockAngle: 50
+  isLockingOn: 0
+  currentLockOn: {fileID: 0}
 --- !u!4 &834774301
 Transform:
   m_ObjectHideFlags: 0
@@ -1109,6 +1111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2.5
   runSpeed: 4
+  lockWalkSpeed: 2
   fallingForwardSpeed: 1.5
   rotateSpeed: 10
 --- !u!114 &1977078080
@@ -1145,7 +1148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80f4f18d82e3ef4fb4b6475c02e9dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thirdPersonCamera: {fileID: 834774300}
 --- !u!136 &1977078082
 CapsuleCollider:
   m_ObjectHideFlags: 0
