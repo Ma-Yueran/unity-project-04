@@ -8,7 +8,6 @@ namespace MYR
     [System.Serializable]
     public class Sound
     {
-        public string soundName;
         public AudioClip audioClip;
         [Range(0f, 1f)]
         public float volume;
@@ -16,6 +15,8 @@ namespace MYR
         public float pitch;
         public bool loop;
         public GameObject sourceObject;
+        [Range(0f, 1f)]
+        public float spatialBlend;
 
         [HideInInspector]
         public AudioSource source;

@@ -41,6 +41,8 @@ namespace MYR
             {
                 animatorHandler.PlayAnimation(hitAnimation, true);
             }
+
+            animatorHandler.SetState(AnimatorHandler.IDLE);
         }
     }
 }
