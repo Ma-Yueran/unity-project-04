@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f512d8dedd90822428fc2967dd7e63e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 500
   currentHealth: 0
 --- !u!136 &399648247
 CapsuleCollider:
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399648245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1b6509a79f728349b27a86910a8bce0, type: 3}
   m_Name: 
@@ -408,7 +408,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.6, z: 0.15}
+  m_Size: {x: 0.5, y: 1.6, z: 0.15}
   m_Center: {x: 0, y: 1, z: 0.25}
 --- !u!1 &705507993
 GameObject:

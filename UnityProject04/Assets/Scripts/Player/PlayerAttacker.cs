@@ -28,11 +28,13 @@ namespace MYR {
 
             if (playerControls.attackFlag01)
             {
+                animatorHandler.SetState(AnimatorHandler.IDLE);
                 animatorHandler.PlayAnimation("Attack_01", true);
             }
 
             if (playerControls.attackFlag02)
             {
+                animatorHandler.SetState(AnimatorHandler.IDLE);
                 animatorHandler.PlayAnimation("Light_Attack_Low", true);
             }
         }
